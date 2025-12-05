@@ -3,6 +3,7 @@ import authSeller from "@/lib/authSeller";
 import { getAuth } from "@clerk/nextjs/server";
 import { v2 as cloudinary } from "cloudinary";
 import { NextResponse } from "next/server";
+import Product from "@/models/Product";
 
 // Configure Cloudinary
 cloudinary.config({
@@ -22,7 +23,7 @@ export async function POST(request) {
             return NextResponse.json({ success: false, message: 'not authorized' })
         }
 
-        const formData = await request. formData()  
+        const formData = await request.formData()  
         
         const name = formData.get('name');
         const description = formData.get('description');
@@ -35,7 +36,7 @@ export async function POST(request) {
         if (!files || files.length === 0) {
             return NextResponse.json({ success: false, message: 'no files uploaded' })
         }
-        I   
+      
         const result = await Promise.all(
             files.map(async (file) => {
                 const arrayBuffer = await file.arrayBuffer()

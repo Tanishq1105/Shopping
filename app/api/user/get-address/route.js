@@ -11,7 +11,7 @@ export async function GET(request) {
         await connectDB()
         const newAddress = await Address.find({userId})
 
-        return NextResponse.json({success:true, addresses})
+        return NextResponse.json({success:true, addresses: newAddress})
     } catch (error) {
         return NextResponse.json({success:false, message: error.message});
     }

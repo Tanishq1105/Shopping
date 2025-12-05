@@ -137,14 +137,16 @@ export const AppContextProvider = (props) => {
     }
 
     useEffect(() => {
+        if(user){
         fetchProductData()
-    }, [])
+        }
+    }, [user])
 
     useEffect(() => {
         if(user) {
         fetchUserData()
         }
-    }, [])
+    }, [user])
 
     const value = {
         user, getToken,

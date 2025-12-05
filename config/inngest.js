@@ -1,6 +1,6 @@
 import { Inngest } from "inngest";
 import connectDB from "./db";
-import User from "@/models/user";
+import User from "@/models/User";
 import Order from "@/models/Order";
 
 // Create a client to send and receive events
@@ -18,11 +18,11 @@ export const syncUserCreation = inngest.createFunction(
                 _id:id,
                 email: email_addresses[0].email_address,
                 name: first_name + ' ' + last_name,
-                image_url:image_url
+                imageUrl:image_url
             }
             await connectDB()
             await User.create(userData)
-I   }
+   }
 )
 
 // Inngest Function to update user data in database
