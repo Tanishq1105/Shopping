@@ -32,22 +32,25 @@ export default function FeaturedProduct() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-14 md:px-14 px-4">
+
         {products.map(({ id, image, title, description }) => (
           <article
             key={id}
             className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
           >
             {/* make the image fill the card - Next/Image requires width/height or `fill` */}
-            <div className="relative w-full aspect-[4/3] transition-transform duration-500 group-hover:scale-105">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover w-full h-full group-hover:brightness-75 transition-all duration-500"
-                priority={false}
-              />
+          
+            <div className="w-full">
+               <Image
+                 src={image}
+                 alt={title}
+                 width={1200}   // pick sensible values
+                 height={800}   // 4:3
+                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                 className="object-cover w-full h-auto"
+                />
             </div>
+
 
             <div className="absolute bottom-6 left-6 text-white space-y-3 max-w-[15rem]">
               <h3 className="font-bold text-xl lg:text-2xl drop-shadow-lg">{title}</h3>
