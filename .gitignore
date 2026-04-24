@@ -1,0 +1,68 @@
+# ===========================
+#  ShopVerse — .gitignore
+# ===========================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables (NEVER commit these)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+*.env
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Package manager locks (keep one — delete if using npm)
+# yarn.lock
+# pnpm-lock.yaml
+
+# Misc
+*.zip
+*.tar.gz
+*.tgz
